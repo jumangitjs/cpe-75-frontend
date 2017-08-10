@@ -1,0 +1,45 @@
+<div class="demo-back">
+  <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+     title="go back" routerLink="/home">
+    <i class="material-icons" role="presentation">home</i>
+  </a>
+</div>
+<div class="demo-blog__posts mdl-grid">
+  <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+    <div class="register-image mdl-card__media mdl-color-text--grey-50">
+      <h3>Register</h3>
+    </div>
+    <!--INPUTS!!-->
+    <div class="center">
+      <form class="mdl-form_control" [formGroup]="registerForm">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" formControlName="first_name">
+          <label class="mdl-textfield__label">First Name</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" formControlName="last_name">
+          <label class="mdl-textfield__label">Last Name</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" formControlName="username">
+          <label class="mdl-textfield__label">Username</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="password" formControlName="password">
+          <label class="mdl-textfield__label">Password</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" formControlName="email">
+          <label class="mdl-textfield__label">Email</label>
+        </div>
+        <!--SUBMIT!-->
+        <button class="mdl-button mdl-js-button mdl-button--raised
+            mdl-js-ripple-effect" (click)="onSubmit()">
+          Submit
+        </button>
+        <!--SUBMIT-->
+      </form>
+    </div>
+    <!--INPUTS!!-->
+  </div>
+</div>

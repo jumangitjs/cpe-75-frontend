@@ -1,0 +1,37 @@
+<div class="demo-back">
+  <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+     routerLink="/home">
+    <i class="material-icons" role="presentation">home</i>
+  </a>
+</div>
+<div class="demo-blog mdl-grid">
+  <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__media mdl-color-text--grey-50">
+      <h3>Login</h3>
+    </div>
+    <!--INPUTS!!-->
+    <div class="center">
+      <form [formGroup]="loginForm" class="mdl-form_control" novalidate>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input login-form_username" formControlName="username">
+          <label class="mdl-textfield__label">Username</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input login-form_password" type="password" formControlName="password">
+          <label class="mdl-textfield__label">Password</label>
+        </div>
+        <!--SUBMIT!-->
+        <button class="mdl-button mdl-js-button mdl-button--raised
+                mdl-js-ripple-effect" (click)="onSubmit()">
+          Login
+        </button>
+        <!--SUBMIT-->
+      </form>
+      <p *ngIf="invalid | async" style="color: red">Invalid Credentials</p>
+      <!-- insert routerlink here -->
+      <a routerLink="/home/register">No account?</a>
+      <div style="padding: 5px"></div>
+    </div>
+    <!--INPUTS!!-->
+  </div>
+</div>

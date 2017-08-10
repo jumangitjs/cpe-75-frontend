@@ -1,0 +1,18 @@
+<div class="center">
+  <h3>Editing {{account.username}}</h3>
+  <form [formGroup]="editForm">
+    <md-input-container>
+      <input mdInput placeholder="Username" value="{{account.username}}" formControlName="username">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="First Name" value="{{account.first_name}}" formControlName="first_name">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Last Name" value="{{account.last_name}}" formControlName="last_name">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Email" value="{{account.email}}" formControlName="email">
+    </md-input-container>
+    <button md-raised-button (click)="onSubmit()">Submit</button>
+  </form>
+</div>

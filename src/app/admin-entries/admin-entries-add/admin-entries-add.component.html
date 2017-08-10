@@ -1,0 +1,13 @@
+<div class="center">
+  <h3>Create Entry</h3>
+  <form [formGroup]="entryForm">
+    <md-input-container>
+      <input mdInput placeholder="Title" formControlName="title">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Image Source" formControlName="img_src">
+      <!--ADD UPLOAD FEATURE LATERS-->
+    </md-input-container>
+    <br><button md-raised-button (click)="onSubmit()">Submit</button>
+  </form>
+</div>

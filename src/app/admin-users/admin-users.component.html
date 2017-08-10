@@ -1,0 +1,30 @@
+<button md-fab (click)="createAccount()">
+  <md-icon>add</md-icon>
+</button>
+<div class="mdl-layout-spacer"></div>
+<table class="mdl-data-table mdl-js-data-table full-width">
+  <thead>
+  <tr>
+    <th class="mdl-data-table__cell--non-numeric full-width">Username</th>
+    <th class="mdl-data-table__cell--non-numeric full-width">First Name</th>
+    <th class="mdl-data-table__cell--non-numeric full-width">Last Name</th>
+    <th class="mdl-data-table__cell--non-numeric full-width">Email</th>
+    <th class="mdl-data-table__cell--non-numeric full-width">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let account of accounts">
+    <td class="mdl-data-table__cell--non-numeric">{{ account.username }}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{ account.first_name }}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{ account.last_name }}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{ account.email }}</td>
+    <td class="mdl-data-table__cell--non-numeric">
+      <button class="mdl-button mdl-js-button mdl-button--icon" (click)="onEdit(account)">
+        <i class="material-icons">edit</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-button--icon" (click)="onDelete(account.id)">
+        <i class="material-icons">delete</i>
+      </button>
+    </td>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+<div class="center">
+  <h3>Create Account</h3>
+  <form [formGroup]="registerForm">
+    <md-input-container>
+      <input mdInput placeholder="Username" formControlName="username">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Password" formControlName="password" type="password">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="First Name" formControlName="first_name">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Last Name" formControlName="last_name">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Email" formControlName="email">
+    </md-input-container>
+    <br><button md-raised-button (click)="onSubmit()">Submit</button>
+  </form>
+</div>

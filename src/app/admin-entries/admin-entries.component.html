@@ -1,0 +1,25 @@
+<button md-fab (click)="createEntry()">
+  <md-icon>add</md-icon>
+</button>
+<div class="mdl-layout-spacer"></div>
+<table class="mdl-data-table mdl-js-data-table full-width">
+  <thead>
+  <tr>
+    <th class="mdl-data-table__cell--non-numeric full-width">Title</th>
+    <th class="mdl-data-table__cell--non-numeric full-width">Image Source</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let entry of entries">
+    <td class="mdl-data-table__cell--non-numeric">{{ entry.title }}</td>
+    <td class="mdl-data-table__cell--non-numeric">{{ entry.img_src }}</td>
+    <td class="mdl-data-table__cell--non-numeric">
+      <button class="mdl-button mdl-js-button mdl-button--icon" (click)="onEdit(entry)">
+        <i class="material-icons">edit</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-button--icon" (click)="onDelete(entry.id)">
+        <i class="material-icons">delete</i>
+      </button>
+    </td>
+  </tbody>
+</table>
