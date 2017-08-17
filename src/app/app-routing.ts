@@ -9,8 +9,9 @@ import {RegisterComponent} from './register/register.component';
 import {HomeContentComponent} from './home-content/home-content.component';
 import {LoginComponent} from './login/login.component';
 import {LoggedInGuard} from "./logged-in.guard";
+import {HomeAboutComponent} from "./home-about/home-about.component";
 
-export const routes:Routes = [
+export const routes: Routes = [
   {
     path: 'admin',
     component: AdminHomeComponent,
@@ -41,7 +42,7 @@ export const routes:Routes = [
     data: {
       toolbarTitle: 'Journey with Jur'
     },
-    children:[
+    children: [
       {
         path: 'login',
         component: LoginComponent,
@@ -54,13 +55,14 @@ export const routes:Routes = [
       {
         path: 'entries',
         component: EntryListComponent,
-        data: {
-          toolbarTitle: 'Journey with Jur'
-        }
       },
       {
         path: '',
         component: HomeContentComponent
+      },
+      {
+        path: 'about',
+        component: HomeAboutComponent
       }
     ]
   },

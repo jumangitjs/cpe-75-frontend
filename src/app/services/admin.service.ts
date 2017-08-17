@@ -60,4 +60,9 @@ export class AdminService {
     return this.http.delete(environment.apiServer + `entry/${id}`, this.options)
       .map(res => res.json());
   }
+
+  triggerLike(id: number) {
+    return this.http.post(environment.apiServer + `entry/${id}`, {}, this.options)
+      .map(res => res.json());
+  }
 }

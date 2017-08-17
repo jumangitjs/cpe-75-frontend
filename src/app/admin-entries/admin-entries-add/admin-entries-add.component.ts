@@ -25,6 +25,7 @@ export class AdminEntriesAddComponent implements OnInit {
   }
 
   onSubmit() {
+    this.entryForm.value.img_src = '../../assets/images/blog/' + this.entryForm.value.img_src;
     this.service.addEntry(this.entryForm.value as Entry).subscribe();
     this.dialogRef.close();
   }

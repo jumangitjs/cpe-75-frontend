@@ -24,7 +24,8 @@ export class HomeComponent implements OnInit {
   }
 
   twitter() {
-    window.open('www.twitter.com/jurielthehuman');
+    // window.open('www.twitter.com/jurielthehuman');
+    document.location.href = 'www.twitter.com/jurielthehuman';
   }
 
   facebook() {

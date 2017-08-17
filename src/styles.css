@@ -289,6 +289,12 @@ body .demo-blog {
   background-image: url('./images/sunset-flowers.jpg');
   height: 280px;
 }
+
+.demo-blog .demo-blog__posts > .mdl-card .about-page {
+  background-image: url('./images/siquijor.jpg');
+  height: 280px;
+}
+
 .demo-blog--blogpost .comments {
   background-color: #EEE;
 }

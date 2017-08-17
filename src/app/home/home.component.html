@@ -3,16 +3,8 @@
     <router-outlet></router-outlet>
     <footer class="mdl-mini-footer">
       <div class="mdl-mini-footer--left-section">
-        <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter"
-                (click)="twitter()">
-          <span class="visuallyhidden">Twitter</span>
-        </button>
-        <button class="mdl-mini-footer--social-btn social-btn social-btn__blogger"
-                (click)="facebook()">
-          <span class="visuallyhidden">Facebook</span>
-        </button>
-        <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
-          <span class="visuallyhidden">About</span>
+        <button md-icon-button routerLink="/home/about">
+          <md-icon>info</md-icon>
         </button>
       </div>
       <div class="mdl-mini-footer--right-section">

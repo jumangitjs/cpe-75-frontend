@@ -16,9 +16,11 @@
       <div class="minilogo"></div>
       <div>
         <strong>Jur</strong>
-        <span>2 days ago</span>
+        <span>{{entry.likers.length}} Like(s)</span>
       </div>
-      <button md-mini-fab color="primary"><md-icon>like</md-icon></button>
+      <button md-mini-fab color="primary" (click)="triggerLike(entry.id)">
+        <md-icon>thumb_up</md-icon>
+      </button>
     </div>
   </div>
 </div>
