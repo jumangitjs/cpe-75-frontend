@@ -1,4 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
@@ -36,6 +36,8 @@ export class AuthService {
     return this.http.post(environment.apiServer + 'user/login', credentials, this.options)
       .map(res => res.json())
       .subscribe(observer => {
+
+        this.storage.setItem('id', observer.user.id);
         this.storage.setItem('token', observer.token);
         this.storage.setItem('name', observer.user.first_name);
         this.storage.setItem('email', observer.user.email);
@@ -43,9 +45,11 @@ export class AuthService {
         this.storage.setItem('isAdmin', observer.user.role);
 
         this.router.navigateByUrl('localhost:4200/home');
+
+        return true;
       },
       error => {
-        this.invalid.next(true);
+        return false;
       });
   }
 
@@ -58,21 +62,22 @@ export class AuthService {
       headers: logoutHeaders
     });
 
-    return this.http.post(environment.apiServer + 'user/logout', {} ,logoutOptions)
+    return this.http.post(environment.apiServer + 'user/logout', {} , logoutOptions)
       .map(res => res.text())
       .subscribe(observer => {
+
+        this.storage.removeItem('id');
         this.storage.removeItem('token');
         this.storage.removeItem('name');
         this.storage.removeItem('email');
         this.storage.removeItem('loggedIn');
         this.storage.removeItem('isAdmin');
 
-        this.logger.next(false);
-        this.admin.next(false);
-
         this.router.navigateByUrl('localhost:4200/home');
+
+        return true;
       },
-      error => console.log(error)//this.invalid.next(true)
+      error => error
       );
   }
 

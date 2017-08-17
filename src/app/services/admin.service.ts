@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
-import {environment} from "../../environments/environment";
-import {AuthService} from "./auth.service";
-import {Account} from "../models/account";
-import {Entry} from "../models/entry";
-import {Observable} from "rxjs/Observable";
+import {environment} from '../../environments/environment';
+import {AuthService} from './auth.service';
+import {Account} from '../models/account';
+import {Entry} from '../models/entry';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class AdminService {
@@ -43,21 +43,21 @@ export class AdminService {
 
   getEntries() {
     return this.http.get(environment.apiServer + 'entries', this.auth.options)
-      .map(res => res ? res.json() : res.text());
+      .map(res => res.json());
   }
 
   addEntry(entry: Entry) {
-    return this.http.post(environment.apiServer + 'entry', entry,this.options)
-      .map(res => res ? res.json() : res.text());
+    return this.http.post(environment.apiServer + 'entry', entry, this.options)
+      .map(res => res.json());
   }
 
   putEntry(entry: Entry, id: number) {
     return this.http.put(environment.apiServer + `entry/${id}`, entry, this.options)
-      .map(res => res ? res.json() : res.text());
+      .map(res => res.json());
   }
 
   deleteEntry(id: number) {
     return this.http.delete(environment.apiServer + `entry/${id}`, this.options)
-      .map(res => res ? res.json() : res.text());
+      .map(res => res.json());
   }
 }

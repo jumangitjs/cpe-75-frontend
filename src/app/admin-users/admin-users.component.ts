@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {AdminService} from "../services/admin.service";
+import {AdminService} from '../services/admin.service';
 import { Account } from '../models/account';
-import {MdDialog} from "@angular/material";
-import {AdminUsersEditComponent} from "./admin-users-edit/admin-users-edit.component";
-import {AdminUsersAddComponent} from "./admin-users-add/admin-users-add.component";
+import {MdDialog} from '@angular/material';
+import {AdminUsersEditComponent} from './admin-users-edit/admin-users-edit.component';
+import {AdminUsersAddComponent} from './admin-users-add/admin-users-add.component';
 
 @Component({
   selector: 'app-admin-users',

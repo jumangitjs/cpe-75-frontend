@@ -3,14 +3,16 @@
     <router-outlet></router-outlet>
     <footer class="mdl-mini-footer">
       <div class="mdl-mini-footer--left-section">
-        <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
+        <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter"
+                (click)="twitter()">
           <span class="visuallyhidden">Twitter</span>
         </button>
-        <button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
+        <button class="mdl-mini-footer--social-btn social-btn social-btn__blogger"
+                (click)="facebook()">
           <span class="visuallyhidden">Facebook</span>
         </button>
         <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
-          <span class="visuallyhidden">Google Plus</span>
+          <span class="visuallyhidden">About</span>
         </button>
       </div>
       <div class="mdl-mini-footer--right-section">
@@ -24,6 +26,18 @@
   </main>
   <div class="mdl-layout__obfuscator"></div>
 </div>
+<!--NOT LOGGED IN-->
+<button target="_blank" routerLink="/home/login" *ngIf="!loggedIn"
+        class="mdl-button mdl-js-button mdl-button--raised button-status
+        mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">
+  Login
+</button>
+<!--LOGGED IN AND ADMIN-->
+<button target="_blank" routerLink="/admin" *ngIf="isAdmin  && loggedIn"
+        class="mdl-button mdl-js-button mdl-button--raised button-status
+        mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">
+  Administrator Panel
+</button>
 <script>
   Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
     var link = el.querySelector('a');

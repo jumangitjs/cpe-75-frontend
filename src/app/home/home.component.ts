@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../services/auth.service';
-import {Observable} from 'rxjs/Observable';
+import {Component, OnInit} from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,17 +8,27 @@ import {Observable} from 'rxjs/Observable';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private service: AuthService) { }
+  public loggedIn: boolean;
+  public isAdmin: boolean;
 
-  loggedIn: boolean;
+  constructor(private service: AuthService) { }
 
   ngOnInit() {
     this.loggedIn = this.service.isLoggedIn;
+    this.isAdmin = this.service.isAdmin;
   }
 
   logout() {
     this.service.logout();
-    this.ngOnInit();
+    this.loggedIn = false;
+  }
+
+  twitter() {
+    window.open('www.twitter.com/jurielthehuman');
+  }
+
+  facebook() {
+    window.location.href = 'www.facebook.com/leirujisme';
   }
 
 }

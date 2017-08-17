@@ -5,11 +5,11 @@
   </a>
 </div>
 <div class="demo-blog__posts mdl-grid">
-  <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
+  <div *ngFor="let entry of entries" class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
     <!--CONTENT!!-->
     <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
-      <img src="../../assets/images/cakefix.jpg">
-      <h4>Cake Fix</h4>
+      <img src="{{entry.img_src}}">
+      <h4>{{entry.title}}</h4>
     </div>
     <!--CONTENT!!-->
     <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
@@ -18,38 +18,7 @@
         <strong>Jur</strong>
         <span>2 days ago</span>
       </div>
-    </div>
-  </div>
-
-  <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
-    <!--CONTENT!!-->
-    <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
-      <img src="../../assets/images/lights.jpg">
-      <h4>Series</h4>
-    </div>
-    <!--CONTENT!!-->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-      <div class="minilogo"></div>
-      <div>
-        <strong>Jur</strong>
-        <span>2 days ago</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
-    <!--CONTENT!!-->
-    <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
-      <img src="../../assets/images/sinulog.jpg">
-      <h4>Pit Señor!</h4>
-    </div>
-    <!--CONTENT!!-->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-      <div class="minilogo"></div>
-      <div>
-        <strong>Jur</strong>
-        <span>2 days ago</span>
-      </div>
+      <button md-mini-fab color="primary"><md-icon>like</md-icon></button>
     </div>
   </div>
 </div>

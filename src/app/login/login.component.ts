@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {AuthService} from '../services/auth.service';
-import {Credentials} from '../models/credentials';
 import {Observable} from 'rxjs/Observable';
-import {environment} from '../../environments/environment';
+import {HomeComponent} from '../home/home.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,8 @@ export class LoginComponent implements OnInit {
   invalid: Observable<boolean>;
 
   constructor(private fb: FormBuilder,
-              private service: AuthService) { }
+              private service: AuthService,
+              private parent: HomeComponent) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
       this.service.login(this.loginForm.value);
+      this.parent.loggedIn = true;
   }
 
 }

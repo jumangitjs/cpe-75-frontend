@@ -80,15 +80,3 @@
     </a>
   </nav>
 </div>
-<!--NOT LOGGED IN-->
-<button target="_blank" routerLink="/home/login" *ngIf="!loggedIn"
-        class="mdl-button mdl-js-button mdl-button--raised button-status
-        mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">
-  Login
-</button>
-<!--LOGGED IN AND ADMIN-->
-<button target="_blank" routerLink="/admin" *ngIf="isAdmin  && loggedIn"
-        class="mdl-button mdl-js-button mdl-button--raised button-status
-        mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">
-  Administrator Panel
-</button>

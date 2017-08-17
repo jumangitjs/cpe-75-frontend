@@ -16,17 +16,18 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import {HttpModule} from '@angular/http';
-import {AuthGuard} from "./auth.guard";
-import {LoggedInGuard} from "./logged-in.guard";
-import {AdminService} from "./services/admin.service";
+import {AuthGuard} from './auth.guard';
+import {LoggedInGuard} from './logged-in.guard';
+import {AdminService} from './services/admin.service';
 import { AdminUsersAddComponent } from './admin-users/admin-users-add/admin-users-add.component';
 import { AdminUsersEditComponent } from './admin-users/admin-users-edit/admin-users-edit.component';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MaterialModule} from "@angular/material";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MaterialModule} from '@angular/material';
 
 import 'hammerjs';
 import { AdminEntriesEditComponent } from './admin-entries/admin-entries-edit/admin-entries-edit.component';
 import { AdminEntriesAddComponent } from './admin-entries/admin-entries-add/admin-entries-add.component';
+import { HomeAboutComponent } from './home-about/home-about.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AdminEntriesAddComponent } from './admin-entries/admin-entries-add/admi
     AdminUsersAddComponent,
     AdminUsersEditComponent,
     AdminEntriesEditComponent,
-    AdminEntriesAddComponent
+    AdminEntriesAddComponent,
+    HomeAboutComponent
   ],
   imports: [
     BrowserModule,

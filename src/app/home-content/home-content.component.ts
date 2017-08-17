@@ -9,14 +9,9 @@ import {Observable} from 'rxjs/Observable';
 })
 export class HomeContentComponent implements OnInit {
 
-  loggedIn: boolean;
-  isAdmin: boolean;
-
   constructor(private service: AuthService) { }
 
   ngOnInit() {
-    this.loggedIn = this.service.isLoggedIn;
-    this.isAdmin = this.service.isAdmin;
   }
 
 }
